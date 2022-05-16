@@ -9,7 +9,10 @@ import {useFormik, useField, useFormikContext} from "formik";
 import * as Yup from "yup";
 
 const schema = Yup.object({
-	word: Yup.string().required("Required")
+	word: Yup.string()
+		.required("Required")
+		.min(1)
+		.max(10)
 });
 
 const print = word => {
