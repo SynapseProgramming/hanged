@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
+import "bootstrap/dist/css/bootstrap.css";
+
 import {useFormik, useField, useFormikContext} from "formik";
 
 import * as Yup from "yup";
@@ -10,8 +12,8 @@ const schema = Yup.object({
 	word: Yup.string().required("Required")
 });
 
-const print = () => {
-	console.log("yes");
+const print = word => {
+	console.log(word);
 };
 
 const WordInput = () => {
@@ -32,10 +34,11 @@ const WordInput = () => {
 					name="word"
 					onChange={formik.handleChange}
 					onBlur={formik.handleBlur}
-					isInvalid={!!formik.errors.hours}
+					isInvalid={!!formik.errors.word}
 				/>
-				<Form.Control.Feedback type="invalid"></Form.Control.Feedback>
-				{formik.errors.word}
+				<Form.Control.Feedback type="invalid">
+					{formik.errors.word}
+				</Form.Control.Feedback>
 			</Form.Group>
 
 			<Button type="submit">Submit</Button>
