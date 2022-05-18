@@ -18,12 +18,10 @@ const schema = Yup.object({
 
 const WordInput = () => {
 	let navigate = useNavigate();
+
 	const print = word => {
 		let str = word;
-		console.log(str.word);
-
 		navigate("app", {state: str.word});
-		console.log(str);
 	};
 
 	const formik = useFormik({

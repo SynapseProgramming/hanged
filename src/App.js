@@ -4,7 +4,6 @@ import "./App.css";
 
 function App(props) {
 	const formData = useLocation();
-	console.log(formData);
 	return (
 		<div className="App">
 			<header className="App-header">
