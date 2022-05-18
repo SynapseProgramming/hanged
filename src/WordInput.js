@@ -20,8 +20,9 @@ const WordInput = () => {
 	let navigate = useNavigate();
 	const print = word => {
 		let str = word;
+		console.log(str.word);
 
-		navigate("app", {state: "ccc"});
+		navigate("app", {state: str.word});
 		console.log(str);
 	};
 
