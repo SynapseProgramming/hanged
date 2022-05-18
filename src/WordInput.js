@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import {useNavigate} from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.css";
 
@@ -15,11 +16,13 @@ const schema = Yup.object({
 		.max(10)
 });
 
-const print = word => {
-	console.log(word);
-};
-
 const WordInput = () => {
+	let navigate = useNavigate();
+	const print = word => {
+		navigate("app");
+		console.log(word);
+	};
+
 	const formik = useFormik({
 		initialValues: {word: ""},
 		onSubmit: print,

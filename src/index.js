@@ -12,6 +12,7 @@ root.render(
 	<Router>
 		<Routes>
 			<Route path="/" element={<WordInput />} />
+			<Route path="app" element={<App />} />
 		</Routes>
 	</Router>
 );
